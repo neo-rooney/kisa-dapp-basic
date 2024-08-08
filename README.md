@@ -257,3 +257,28 @@ const handleClickBuy = async () => {
   </Button>
 )}
 ```
+
+```ts
+const handleClickRefill = async () => {
+  const amount = 100;
+
+  const gasLimit = await contract?.refill.estimateGas(amount);
+  if (!selectedWallet) return;
+  const provider = new ethers.BrowserProvider(selectedWallet?.provider);
+  // 네트워크의 현재 가스 가격을 가져옴
+  const feeData = await provider?.getFeeData();
+  console.log(feeData);
+
+  const tx = await contract?.refill(amount, {
+    gasLimit, // 계산된 가스 리밋을 사용
+    maxPriorityFeePerGas: feeData.maxPriorityFeePerGas,
+    maxFeePerGas: feeData.maxFeePerGas,
+  });
+
+  // 트랜잭션이 블록에 포함될 때까지 기다림
+  await tx.wait();
+
+  const newBalance = await contract?.cupcakeBalances(VM_CA);
+  setBalance(Number(newBalance));
+};
+```
