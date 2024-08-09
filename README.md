@@ -45,6 +45,14 @@ export default App;
 - console.log로 wallets 확인해보기
 
 ```tsx title=components/VendingMachine.tsx
+const {
+  wallets,
+  selectedWallet,
+  selectedAccount,
+  connectWallet,
+  disconnectWallet,
+} = useWalletContext();
+
 {
   Object.keys(wallets).length > 0 ? (
     Object.values(wallets).map((provider: EIP6963ProviderDetail) => (
@@ -81,7 +89,7 @@ export default App;
     ))
   ) : (
     <div>there are no Announced Providers</div>
-  );
+  )
 }
 ```
 

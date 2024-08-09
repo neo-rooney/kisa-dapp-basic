@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Label } from "@radix-ui/react-label";
 import { VM_JSON } from "@/abi/VendingMachine";
 import { useEffect, useState } from "react";
-const VM_CA = "0x7AAE1dF240D8B634de18c4BCD40a51604b44b633";
+const VM_CA = "0x012EFB933AfDDB96a5c6D2C0ae894FD2b0889099";
 import { ethers } from "ethers";
 
 const VendingMachine = () => {
