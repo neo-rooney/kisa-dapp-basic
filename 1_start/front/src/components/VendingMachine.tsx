@@ -8,9 +8,30 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { useWalletContext } from "@/contexts/WalletContext/WalletContext";
+import { formatAddress } from "@/lib/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Label } from "@radix-ui/react-label";
+import { VM_JSON } from "@/abi/VendingMachine";
+import { useEffect, useState } from "react";
+const VM_CA = "";
+import { ethers } from "ethers";
 
 const VendingMachine = () => {
+  // const {
+  //   wallets,
+  //   connectWallet,
+  //   selectedAccount,
+  //   selectedWallet,
+  //   disconnectWallet,
+  // } = useWalletContext();
+
+  const [contract, setContract] = useState<ethers.Contract>();
+  const [balance, setBalance] = useState(0);
+  const [amount, setAmount] = useState("");
+  const [owner, setIsOwner] = useState(false);
+  const [myCupCake, setMyCupCake] = useState(0);
+
   return (
     <div className="w-full max-w-sm grid gap-2">
       <Card>
@@ -20,7 +41,9 @@ const VendingMachine = () => {
           </div>
           <CardDescription>지갑을 연결해주세요.</CardDescription>
         </CardHeader>
-        <CardContent className="grid items-center gap-4"></CardContent>
+        <CardContent className="grid items-center gap-4">
+          {/* 지갑 UI 추가 되는 부분 */}
+        </CardContent>
       </Card>
       <Card className="w-full max-w-sm">
         <CardHeader>
