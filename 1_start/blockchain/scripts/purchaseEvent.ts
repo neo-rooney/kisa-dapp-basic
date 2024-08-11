@@ -3,7 +3,7 @@ import json from "../artifacts/contracts/VendingMachine.sol/VendingMachine.json"
 
 async function purchaseEvent() {
   try {
-    const contractAddress = "0x27c4db64FbBca8CC26E79f773e6899812A2D270D";
+    const contractAddress = "";
 
     const vendingMachine = await ethers.getContractAt(
       "VendingMachine",
