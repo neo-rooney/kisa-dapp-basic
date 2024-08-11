@@ -62,3 +62,15 @@ npx hardhat run scripts/purchase.ts --network sepolia
 npx hardhat run scripts/purchaseEvent.ts --network sepolia
 npx hardhat run scripts/refill.ts --network sepolia
 ```
+
+### 프론트 기획 & 개발
+
+#### 1. Front 코드 확인
+
+```shell
+cd front
+
+npm install
+
+npm run dev
+```

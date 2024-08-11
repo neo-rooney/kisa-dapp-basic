@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Label } from "@radix-ui/react-label";
 import { VM_JSON } from "@/abi/VendingMachine";
 import { useEffect, useState } from "react";
-const VM_CA = "0x012EFB933AfDDB96a5c6D2C0ae894FD2b0889099";
+const VM_CA = "0x3C7584E108036e533C75F2Db3f7525e2c9A3eB79";
 import { ethers } from "ethers";
 
 const VendingMachine = () => {
@@ -70,7 +70,9 @@ const VendingMachine = () => {
 
   const handleClickBuy = async () => {
     try {
-      const ethValueInWei = ethers.parseUnits(amount, "ether");
+      const cakePrice = 0.0001;
+      const finalPrice = String(Number(amount) * cakePrice);
+      const ethValueInWei = ethers.parseUnits(finalPrice, "ether");
 
       if (!contract) return;
 
