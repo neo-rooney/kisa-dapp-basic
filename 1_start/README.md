@@ -249,7 +249,10 @@ useEffect(() => {
 ```ts
 const handleClickBuy = async () => {
   try {
-    const ethValueInWei = ethers.parseUnits(amount, "ether");
+
+    const cakePrice = 0.0001;
+    const finalPrice = String(Number(amount) * cakePrice);
+    const ethValueInWei = ethers.parseUnits(finalPrice, "ether");
 
     if (!contract) return;
 
