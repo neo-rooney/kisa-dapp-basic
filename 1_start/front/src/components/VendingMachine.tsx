@@ -28,9 +28,9 @@ const VendingMachine = () => {
 
   const [contract, setContract] = useState<ethers.Contract>();
   const [balance, setBalance] = useState(0);
-  const [amount, setAmount] = useState("");
   const [owner, setIsOwner] = useState(false);
   const [myCupCake, setMyCupCake] = useState(0);
+  const [amount, setAmount] = useState("");
 
   return (
     <div className="w-full max-w-sm grid gap-2">
@@ -56,7 +56,11 @@ const VendingMachine = () => {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="email">구매할 컵 케이크 수량을 입력해주세요.</Label>
-            <Input id="amount" required />
+            <Input
+              id="amount"
+              required
+              onChange={(e) => setAmount(e.target.value)}
+            />
           </div>
         </CardContent>
         <CardFooter className="flex-col gap-2">
