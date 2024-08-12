@@ -1,6 +1,7 @@
 ### 테스트넷에 배포하기
 
 #### 0. 블록체인 실습 준비
+
 ```shell
 cd 1_start/blockchain
 
@@ -148,7 +149,7 @@ export default App;
     ))
   ) : (
     <div>there are no Announced Providers</div>
-  );
+  )
 }
 ```
 
