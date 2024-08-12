@@ -238,7 +238,7 @@ useEffect(() => {
     <Button className="w-full" variant="outline">
       100개 리필하기
     </Button>
-  );
+  )
 }
 ```
 
