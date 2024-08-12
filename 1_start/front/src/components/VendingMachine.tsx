@@ -12,7 +12,7 @@ import { useWalletContext } from "@/contexts/WalletContext/WalletContext";
 import { formatAddress } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Label } from "@radix-ui/react-label";
-import { VM_JSON } from "@/abi/VendingMachine";
+import { VM_JSON } from "@/abi/json";
 import { useEffect, useState } from "react";
 const VM_CA = "";
 import { ethers } from "ethers";
