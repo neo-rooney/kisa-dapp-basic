@@ -1,5 +1,12 @@
 ### 테스트넷에 배포하기
 
+#### 0. 블록체인 실습 준비
+```shell
+cd 1_start/blockchain
+
+npm install
+```
+
 #### 1. 네트워크 환경 설정
 
 - https://www.alchemy.com/chain-connect/chain/sepolia
