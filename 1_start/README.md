@@ -27,7 +27,12 @@ CA=
 
 ```ts title=hardhat.config.ts
 require("dotenv").config();
-const { RPC_Endpoints, OWNER_PRIVATE_KEY } = process.env;
+const {
+  RPC_Endpoints,
+  OWNER_PRIVATE_KEY,
+  RPC_Endpoints_Sepolia,
+  RPC_Endpoints_BNB,
+} = process.env;
 
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
