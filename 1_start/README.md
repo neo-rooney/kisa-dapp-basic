@@ -11,11 +11,12 @@ npm install
 #### 1. 네트워크 환경 설정
 
 - https://www.alchemy.com/chain-connect/chain/sepolia
-
+- https://chainlist.org/chain/97
 ##### (1) 환경 변수
 
 ```title=.env
-RPC_Endpoints=
+RPC_Endpoints_Sepolia=
+RPC_Endpoints_BNB=
 OWNER_PUBLIC_KEY=
 OWNER_PRIVATE_KEY=
 RECEIVER_PUBLIC_KEY=
@@ -38,7 +39,11 @@ const config: HardhatUserConfig = {
       accounts: [OWNER_PRIVATE_KEY!],
     },
     sepolia: {
-      url: RPC_Endpoints,
+      url: RPC_Endpoints_Sepolia,
+      accounts: [OWNER_PRIVATE_KEY!],
+    },
+    bnb: {
+      url: RPC_Endpoints_BNB,
       accounts: [OWNER_PRIVATE_KEY!],
     },
   },
